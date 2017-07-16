@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'restful_app/style.css' %}">
+    <title>Users Show</title>
+</head>
+<body>
+    <h1>User {{user_id}}</h1>
+    <p>Full name: {{full_name}}</p>
+    <p>Email: {{email}}</p>
+    <p>Created At: {{created_at}}</p>
+    <a href="/users/{{user_id}}/edit">Edit</a>
+    <a href="/users/{{user_id}}/delete">Delete</a>
+    <a href="/users">Go Back</a>
+</body>
+</html>

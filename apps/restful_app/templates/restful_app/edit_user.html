@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'restful_app/style.css' %}">
+    <title>Edit User {{user_id}}</title>
+</head>
+<body>
+    <h1>Edit User {{user_id}}</h1>
+    <form action="/edit_process" method="post">
+        {%csrf_token%}
+        <input type="hidden" name="user_id" value="{{user_id}}">
+        <label class="block_up">First Name:
+            <input type="text" name="first_name" value="{{first_name}}">
+        </label>
+        <label class="block_up">Last Name:
+            <input type="text" name="last_name" value="{{last_name}}">
+        </label>
+        <label class="block_up">Email: 
+            <input type="text" name="email" value="{{email}}">
+        </label>
+        <input type="submit" value="Create">
+    </form>
+    <a href="/users/{{user_id}}">Show</a>
+    <a href="/users">Go Back</a>
+</body>
+</html>
